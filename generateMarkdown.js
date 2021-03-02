@@ -1,7 +1,10 @@
+let licenseBadge;
+let licenseLink;
+let licenseSection;
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  let licenseBadge;
+
   switch (license){
     case "MIT":
       licenseBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
@@ -19,15 +22,15 @@ function renderLicenseBadge(license) {
     licenseBadge = "";
   }
 
-  renderLicenseLink(license);
+  renderLicenseLink(license, licenseBadge);
 
   console.log(`License Badge ${licenseBadge}`);
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  let licenseLink;
+function renderLicenseLink(license, licenseBadge) {
+
   switch (license){
     case "MIT":
       licenseLink = '[MIT](https://choosealicense.com/licenses/mit/#)';
@@ -44,11 +47,31 @@ function renderLicenseLink(license) {
     default:
       licenseLink = "";
   }
+
+  renderLicenseSection(license, licenseBadge, licenseLink);
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license, licenseBadge, licenseLink) {
+
+  switch (license){
+    case "MIT":
+      licenseSection = `${licenseBadge} ${licenseLink}`;
+      break;
+    case "Apache 2.0":
+      licenseSection = `${licenseBadge} ${licenseLink}`;
+      break;
+    case "GNU GPL v3":
+      licenseSection = `${licenseBadge} ${licenseLink}`;
+      break;
+    case "ISC":
+      licenseSection = `${licenseBadge} ${licenseLink}`;
+      break;
+    default:
+      licenseSection = "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -83,7 +106,7 @@ function generateMarkdown(data) {
   
   ## License
   
-  ${data.license}
+  ${licenseSection}
   
   
   ## Contributing
