@@ -18,7 +18,7 @@ function renderLicenseBadge(license) {
     default:
     licenseBadge = "";
   }
-}
+
   renderLicenseLink(license);
 
   console.log(`License Badge ${licenseBadge}`);
