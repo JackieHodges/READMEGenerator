@@ -42,7 +42,7 @@ inquirer
     },
     {
         type: 'list',
-        choices: ["test 1", "test 2", "test 3", "test 4"],
+        choices: ["MIT", "Apache 2.0", "GNU GPL v3", "ISC", "Not Listed", "N/A"],
         message: questions[4],
         name: 'license',
     },
@@ -69,6 +69,7 @@ inquirer
   ])
   .then((data) => {
 
+    let badgeSearch = markdown.renderLicenseBadge(data.license);
     let markdownData = markdown.generateMarkdown(data);
 
     writeToFile("README.md", markdownData);
