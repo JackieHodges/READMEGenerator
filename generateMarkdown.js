@@ -19,17 +19,17 @@ function renderLicenseBadge(license) {
       licenseBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
       break;
     default:
-    licenseBadge = "";
+      licenseBadge = "";
   }
 
-  renderLicenseLink(license, licenseBadge);
+  renderLicenseLink(license);
 
-  console.log(`License Badge ${licenseBadge}`);
+  // console.log(`License Badge ${licenseBadge}`);
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license, licenseBadge) {
+function renderLicenseLink(license) {
 
   switch (license){
     case "MIT":
@@ -48,25 +48,25 @@ function renderLicenseLink(license, licenseBadge) {
       licenseLink = "";
   }
 
-  renderLicenseSection(license, licenseBadge, licenseLink);
+  renderLicenseSection(license);
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license, licenseBadge, licenseLink) {
+function renderLicenseSection(license) {
 
   switch (license){
     case "MIT":
-      licenseSection = `${licenseBadge} ${licenseLink}`;
+      licenseSection = `This application is covered under the ${licenseLink} license.`;
       break;
     case "Apache 2.0":
-      licenseSection = `${licenseBadge} ${licenseLink}`;
+      licenseSection = `This application is covered under the ${licenseLink} license.`;
       break;
     case "GNU GPL v3":
-      licenseSection = `${licenseBadge} ${licenseLink}`;
+      licenseSection = `This application is covered under the ${licenseLink} license.`;
       break;
     case "ISC":
-      licenseSection = `${licenseBadge} ${licenseLink}`;
+      licenseSection = `This application is covered under the ${licenseLink} license.`;
       break;
     default:
       licenseSection = "";
@@ -77,6 +77,7 @@ function renderLicenseSection(license, licenseBadge, licenseLink) {
 function generateMarkdown(data) {
   return `
   # ${data.title}
+  ${licenseBadge}
 
   
   ## Description
@@ -120,7 +121,9 @@ function generateMarkdown(data) {
   
   
   ## Questions
-  ${data.github} and ${data.email}
+  You can find my GitHub profile [here](https://github.com/${data.github}). 
+  
+  If you have any questions, comments, or concerns, I can be reached at the following email address: ${data.email}.
 `;
 }
 
