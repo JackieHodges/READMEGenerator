@@ -1,8 +1,7 @@
 let licenseBadge;
 let licenseLink;
 let licenseSection;
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//=function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
 
   switch (license){
@@ -24,11 +23,9 @@ function renderLicenseBadge(license) {
 
   renderLicenseLink(license);
 
-  // console.log(`License Badge ${licenseBadge}`);
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function that returns the license link
 function renderLicenseLink(license) {
 
   switch (license){
@@ -51,8 +48,7 @@ function renderLicenseLink(license) {
   renderLicenseSection(license);
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that returns the license section of README
 function renderLicenseSection(license) {
 
   switch (license){
@@ -73,7 +69,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
