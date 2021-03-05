@@ -72,7 +72,7 @@ inquirer
     let badgeSearch = markdown.renderLicenseBadge(data.license);
     let markdownData = markdown.generateMarkdown(data);
 
-    writeToFile("README.md", markdownData);
+    writeToFile("generatedREADME.md", markdownData);
     
     });
 
